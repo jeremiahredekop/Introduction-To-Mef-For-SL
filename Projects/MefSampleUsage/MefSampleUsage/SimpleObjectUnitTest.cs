@@ -12,52 +12,64 @@ namespace MefSampleUsage
     {
 
         [TestMethod]
-        public void TestCompose()
+        public void Perfom_Simple_Object_Composition()
         {
-            var p = new Placeholder();
-            Compose(p);
-            Assert.AreEqual(5, p.ClassWithInteger.IntegerToExport);
+            var toCompose = new ClassToCompose();
+            Compose(toCompose);
+            Assert.AreEqual(5, toCompose.PropertyToImport.IntegerProperty);
         }
 
+        /// <summary>
+        /// Test that will demonstrate instance behavior when composition happens more than once
+        /// </summary>
         [TestMethod]
-        public void TestResolve_Multiple_Times()
+        public void Resolve_Multiple_Times()
         {
-            var p = new Placeholder();
-            Compose(p);
+            
+            var toCompose1 = new ClassToCompose();
+            Compose(toCompose1);
 
-            var p2 = new Placeholder();
-            Compose(p2);
+            var toCompose2 = new ClassToCompose();
+            Compose(toCompose2);
 
             // placeholders are different instances
-            Assert.IsFalse(object.ReferenceEquals(p, p2));
+            Assert.IsFalse(object.ReferenceEquals(toCompose1, toCompose2));
             // different placeholders have reference to same object
-            Assert.IsTrue(object.ReferenceEquals(p.ClassWithInteger, p2.ClassWithInteger));
+            Assert.IsTrue(object.ReferenceEquals(toCompose1.PropertyToImport, toCompose2.PropertyToImport));
         }
 
         [TestMethod]
-        public void Test_GetExport()
+        public void Get_Export_Directly_From_Container()
         {
             Lazy<ClassWithInteger> c = container.GetExport<ClassWithInteger>();
-            var p = new Placeholder();
+            var p = new ClassToCompose();
             Compose(p);
 
-            Assert.IsTrue(Object.ReferenceEquals(c.Value, p.ClassWithInteger));
+            Assert.IsTrue(Object.ReferenceEquals(c.Value, p.PropertyToImport));
 
         }
 
-        public class Placeholder
+
+
+        /// <summary>
+        /// class that will recieve the Mef Import
+        /// </summary>
+        public class ClassToCompose
         {
 
+            // mef will set this property because of import attribute
             [Import]
-            public ClassWithInteger ClassWithInteger {get;set;}
-
+            public ClassWithInteger PropertyToImport {get;set;}
         }
 
+        /// <summary>
+        /// Class with an integer value.  Class will be exported
+        /// </summary>
         [Export]
         public class ClassWithInteger
         {
 
-            public int IntegerToExport
+            public int IntegerProperty
             {
                 get
                 {
