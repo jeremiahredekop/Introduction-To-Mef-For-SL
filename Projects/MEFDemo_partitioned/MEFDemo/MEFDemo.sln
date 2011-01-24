@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEFDemo", "MEFDemo\MEFDemo.csproj", "{9FE8CEE9-F8A4-468A-A8ED-0719A33A855B}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MEFDemo.Web", "MEFDemo.Web\", "{C3BA751A-E3B8-4255-AFD9-C9F31A9C2FC9}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/MEFDemo.Web"
+		Debug.AspNetCompiler.PhysicalPath = "MEFDemo.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\MEFDemo.Web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/MEFDemo.Web"
+		Release.AspNetCompiler.PhysicalPath = "MEFDemo.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\MEFDemo.Web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55898"
+		DefaultWebSiteLanguage = "Visual C#"
+		ProjOutputReferences = "{9FE8CEE9-F8A4-468A-A8ED-0719A33A855B}|ClientBin|false;{7BE2F170-BE93-4328-A942-64C6362891E2}|ClientBin/Extensions|false;{10316B10-0190-4570-8C28-7DE5318CCB11}|ClientBin/Extensions|false;{3B40158A-422C-4C88-86B8-DA45D909059E}|ClientBin/Extensions|false;"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractLibrary", "ContractLibrary.cs\ContractLibrary.csproj", "{F562BE6A-00C2-42E3-86EE-99FB938B0A03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotepadPlugin", "NotepadPlugin\NotepadPlugin.csproj", "{7BE2F170-BE93-4328-A942-64C6362891E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockPlugin", "ClockPlugin\ClockPlugin.csproj", "{10316B10-0190-4570-8C28-7DE5318CCB11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarPlugin", "CalendarPlugin\CalendarPlugin.csproj", "{3B40158A-422C-4C88-86B8-DA45D909059E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SL Plugins", "SL Plugins", "{410434F4-0F2E-4132-BBDD-468E57B63562}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FE8CEE9-F8A4-468A-A8ED-0719A33A855B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FE8CEE9-F8A4-468A-A8ED-0719A33A855B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FE8CEE9-F8A4-468A-A8ED-0719A33A855B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FE8CEE9-F8A4-468A-A8ED-0719A33A855B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3BA751A-E3B8-4255-AFD9-C9F31A9C2FC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BA751A-E3B8-4255-AFD9-C9F31A9C2FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3BA751A-E3B8-4255-AFD9-C9F31A9C2FC9}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BA751A-E3B8-4255-AFD9-C9F31A9C2FC9}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{F562BE6A-00C2-42E3-86EE-99FB938B0A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F562BE6A-00C2-42E3-86EE-99FB938B0A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F562BE6A-00C2-42E3-86EE-99FB938B0A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F562BE6A-00C2-42E3-86EE-99FB938B0A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BE2F170-BE93-4328-A942-64C6362891E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BE2F170-BE93-4328-A942-64C6362891E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BE2F170-BE93-4328-A942-64C6362891E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BE2F170-BE93-4328-A942-64C6362891E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10316B10-0190-4570-8C28-7DE5318CCB11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10316B10-0190-4570-8C28-7DE5318CCB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10316B10-0190-4570-8C28-7DE5318CCB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10316B10-0190-4570-8C28-7DE5318CCB11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B40158A-422C-4C88-86B8-DA45D909059E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B40158A-422C-4C88-86B8-DA45D909059E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B40158A-422C-4C88-86B8-DA45D909059E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B40158A-422C-4C88-86B8-DA45D909059E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3B40158A-422C-4C88-86B8-DA45D909059E} = {410434F4-0F2E-4132-BBDD-468E57B63562}
+		{10316B10-0190-4570-8C28-7DE5318CCB11} = {410434F4-0F2E-4132-BBDD-468E57B63562}
+		{7BE2F170-BE93-4328-A942-64C6362891E2} = {410434F4-0F2E-4132-BBDD-468E57B63562}
+	EndGlobalSection
+EndGlobal

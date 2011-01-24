@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2ad20a25-5966-43b4-86a5-ea3ece1637c2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55898/MEFDemo.Web/XapService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="XapService.wsdl" MetadataType="Wsdl" ID="85a551ea-54a6-4227-9375-d513918970ae" SourceId="1" SourceUrl="http://localhost:55898/MEFDemo.Web/XapService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="XapService.xsd" MetadataType="Schema" ID="706cf535-0c56-40d9-adf0-135d429b72c2" SourceId="1" SourceUrl="http://localhost:55898/MEFDemo.Web/XapService.svc?xsd=xsd0" />
+    <MetadataFile FileName="XapService.disco" MetadataType="Disco" ID="4e09b4ba-f486-424f-9011-2dba13673262" SourceId="1" SourceUrl="http://localhost:55898/MEFDemo.Web/XapService.svc?disco" />
+    <MetadataFile FileName="XapService1.xsd" MetadataType="Schema" ID="c06b3111-c7a6-447d-8efe-a3099c60c0d9" SourceId="1" SourceUrl="http://localhost:55898/MEFDemo.Web/XapService.svc?xsd=xsd2" />
+    <MetadataFile FileName="XapService2.xsd" MetadataType="Schema" ID="0ab1b636-b6c6-413d-9264-a1d25c6e252e" SourceId="1" SourceUrl="http://localhost:55898/MEFDemo.Web/XapService.svc?xsd=xsd1" />
+    <MetadataFile FileName="XapService1.wsdl" MetadataType="Wsdl" ID="9d9fd94c-028c-4fdb-877d-98d1c06b6a44" SourceId="1" SourceUrl="http://localhost:55898/MEFDemo.Web/XapService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
