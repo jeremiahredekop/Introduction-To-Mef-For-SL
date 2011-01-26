@@ -48,10 +48,12 @@
   <ItemGroup>
     <Compile Include="ContractObjectUnitTest.cs" />
     <Compile Include="ContractObjectUnitTestWithMetadata.cs" />
+    <Compile Include="ImportingConstructorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecompositionTest1.cs" />
     <Compile Include="SimpleObjectUnitTest.cs" />
-    <Compile Include="ContractStructUnitTest.cs" />
-    <Compile Include="SimpleStructUnitTest.cs" />
+    <Compile Include="ContractValueUnitTest.cs" />
+    <Compile Include="SimpleValueUnitTest.cs" />
     <Compile Include="Support\MefTestBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

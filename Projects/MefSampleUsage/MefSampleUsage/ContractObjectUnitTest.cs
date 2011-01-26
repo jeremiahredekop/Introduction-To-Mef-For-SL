@@ -12,10 +12,13 @@ namespace MefSampleUsage
     {
 
         [TestMethod]
-        public void TestCompose()
+        public void Contract_Object_Composition_Test()
         {
-            var p = new Placeholder();
+            // create instance to compose
+            var p = new ToCompose();
+            // perform composition
             Compose(p);
+            // value is set
             Assert.AreEqual(5, p.ClassWithInteger.IntegerValue);
         }
 
@@ -23,7 +26,7 @@ namespace MefSampleUsage
         public void Test_Get_Export()
         {
             Lazy<IClassWithInteger> c = container.GetExport<IClassWithInteger>();
-            var p = new Placeholder();
+            var p = new ToCompose();
             Compose(p);
 
             Assert.IsTrue(Object.ReferenceEquals(c.Value, p.ClassWithInteger));
@@ -35,7 +38,7 @@ namespace MefSampleUsage
             int IntegerValue { get; }
         }
 
-        public class Placeholder
+        public class ToCompose
         {
 
             [Import]

@@ -1,30 +1,29 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.ComponentModel.Composition;
 
 namespace MefSampleUsage
 {
     [TestClass]
-    public class SimpleStructUnitTest : MefUnitTest
+    public class SimpleValueUnitTest : MefUnitTest
     {
         [TestMethod]
         public void TestMethod1()
         {
-            ClassNeedingInteger c1 = new ClassNeedingInteger();
-            Assert.AreEqual(0, c1.IntegerToImport);
+            // create object to compose
+            ToCompose c1 = new ToCompose();
+            // Integer value is 0 (default)
+            Assert.AreEqual(0, c1.IntegerValue);
 
+            // perform composition
             Compose(c1);
-            Assert.AreEqual(5, c1.IntegerToImport);
-
+            // Integer value is now 5
+            Assert.AreEqual(5, c1.IntegerValue);
         }
 
-        public class ClassNeedingInteger
+        public class ToCompose
         {
             [Import]
-            public int IntegerToImport { get; set; }
+            public int IntegerValue { get; set; }
         }
 
 

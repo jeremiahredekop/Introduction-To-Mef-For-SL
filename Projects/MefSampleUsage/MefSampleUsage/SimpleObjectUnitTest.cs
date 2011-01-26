@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel.Composition;
+﻿using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MefSampleUsage
@@ -14,10 +10,16 @@ namespace MefSampleUsage
         [TestMethod]
         public void Perfom_Simple_Object_Composition()
         {
-            var toCompose = new ClassToCompose();
+            // crate class to compose
+            var toCompose = new ToCompose();
+            // perform composition
             Compose(toCompose);
-            Assert.AreEqual(5, toCompose.PropertyToImport.IntegerProperty);
+            // integer value is set
+            Assert.AreEqual(5, toCompose.PropertyToImport.IntegerValue);
         }
+
+        #region Resolve Multiple Times Test
+
 
         /// <summary>
         /// Test that will demonstrate instance behavior when composition happens more than once
@@ -25,11 +27,11 @@ namespace MefSampleUsage
         [TestMethod]
         public void Resolve_Multiple_Times()
         {
-            
-            var toCompose1 = new ClassToCompose();
+
+            var toCompose1 = new ToCompose();
             Compose(toCompose1);
 
-            var toCompose2 = new ClassToCompose();
+            var toCompose2 = new ToCompose();
             Compose(toCompose2);
 
             // placeholders are different instances
@@ -37,17 +39,17 @@ namespace MefSampleUsage
             // different placeholders have reference to same object
             Assert.IsTrue(object.ReferenceEquals(toCompose1.PropertyToImport, toCompose2.PropertyToImport));
         }
-
+        #endregion
 
         /// <summary>
         /// class that will recieve the Mef Import
         /// </summary>
-        public class ClassToCompose
+        public class ToCompose
         {
 
             // mef will set this property because of import attribute
             [Import]
-            public ClassWithInteger PropertyToImport {get;set;}
+            public ClassWithInteger PropertyToImport { get; set; }
         }
 
         /// <summary>
@@ -57,7 +59,7 @@ namespace MefSampleUsage
         public class ClassWithInteger
         {
 
-            public int IntegerProperty
+            public int IntegerValue
             {
                 get
                 {

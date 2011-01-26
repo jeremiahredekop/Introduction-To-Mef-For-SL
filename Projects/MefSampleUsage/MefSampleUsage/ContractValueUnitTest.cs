@@ -8,23 +8,28 @@ using System.ComponentModel.Composition;
 namespace MefSampleUsage
 {
     [TestClass]
-    public class ContractStructUnitTest : MefUnitTest
+    public class ContractValueUnitTest : MefUnitTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Compose_Contract_Value_Test()
         {
-            ClassNeedingInteger c1 = new ClassNeedingInteger();
-            Assert.AreEqual(0, c1.IntegerToImport);
+            // create instance to compose
+            ToCompose c1 = new ToCompose();
+            // Integer value is 0 (default)
+            Assert.AreEqual(0, c1.IntegerValue);
 
+            // perform composition
             Compose(c1);
-            Assert.AreEqual(8, c1.IntegerToImport);
+            // Integer value is now 5
+            Assert.AreEqual(8, c1.IntegerValue);
 
         }
 
-        public class ClassNeedingInteger
+        public class ToCompose
         {
+            // Contract name is "Medhat"
             [Import("Medhat")]
-            public int IntegerToImport { get; set; }
+            public int IntegerValue { get; set; }
         }
 
 
