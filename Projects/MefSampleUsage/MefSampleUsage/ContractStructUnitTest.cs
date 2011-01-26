@@ -17,7 +17,7 @@ namespace MefSampleUsage
             Assert.AreEqual(0, c1.IntegerToImport);
 
             Compose(c1);
-            Assert.AreEqual(5, c1.IntegerToImport);
+            Assert.AreEqual(8, c1.IntegerToImport);
 
         }
 
@@ -35,7 +35,16 @@ namespace MefSampleUsage
             {
                 get
                 {
-                    return 5;
+                    return 8;
+                }
+            }
+
+            [Export("Jeremiah")]
+            public int IntegerToExport2
+            {
+                get
+                {
+                    return 100;
                 }
             }
         }

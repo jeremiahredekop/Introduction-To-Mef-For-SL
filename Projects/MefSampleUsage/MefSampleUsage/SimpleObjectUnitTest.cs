@@ -38,18 +38,6 @@ namespace MefSampleUsage
             Assert.IsTrue(object.ReferenceEquals(toCompose1.PropertyToImport, toCompose2.PropertyToImport));
         }
 
-        [TestMethod]
-        public void Get_Export_Directly_From_Container()
-        {
-            Lazy<ClassWithInteger> c = container.GetExport<ClassWithInteger>();
-            var p = new ClassToCompose();
-            Compose(p);
-
-            Assert.IsTrue(Object.ReferenceEquals(c.Value, p.PropertyToImport));
-
-        }
-
-
 
         /// <summary>
         /// class that will recieve the Mef Import

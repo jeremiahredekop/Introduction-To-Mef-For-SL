@@ -16,7 +16,7 @@ namespace MefSampleUsage
         {
             var p = new Placeholder();
             Compose(p);
-            Assert.AreEqual(7, p.ClassWithInteger.IntegerToExport);
+            Assert.AreEqual(7, p.ClassWithInteger.IntegerValue);
         }
 
 
@@ -28,13 +28,13 @@ namespace MefSampleUsage
             var results = from t in c
                           select new { t.Metadata.Name, t.Value };
 
-            Assert.AreEqual(1,results.Count(a => a.Name == "Jeremiah" && a.Value.IntegerToExport == 7));
-            Assert.AreEqual(1, results.Count(a => a.Name == "Medhat" && a.Value.IntegerToExport == 10));
+            Assert.AreEqual(1,results.Count(a => a.Name == "Jeremiah" && a.Value.IntegerValue == 7));
+            Assert.AreEqual(1, results.Count(a => a.Name == "Medhat" && a.Value.IntegerValue == 10));
         }
 
         public interface IClassWithInteger
         {
-            int IntegerToExport { get; }
+            int IntegerValue { get; }
         }
 
         public class Placeholder
@@ -63,7 +63,7 @@ namespace MefSampleUsage
         public class ClassWithIntegerA : IClassWithInteger
         {
 
-            public int IntegerToExport
+            public int IntegerValue
             {
                 get
                 {
@@ -77,7 +77,7 @@ namespace MefSampleUsage
         public class ClassWithIntegerB : IClassWithInteger
         {
 
-            public int IntegerToExport
+            public int IntegerValue
             {
                 get
                 {

@@ -16,22 +16,7 @@ namespace MefSampleUsage
         {
             var p = new Placeholder();
             Compose(p);
-            Assert.AreEqual(5, p.ClassWithInteger.IntegerToExport);
-        }
-
-        [TestMethod]
-        public void TestResolve_Multiple_Times()
-        {
-            var p = new Placeholder();
-            Compose(p);
-
-            var p2 = new Placeholder();
-            Compose(p2);
-
-            // placeholders are different instances
-            Assert.IsFalse(object.ReferenceEquals(p, p2));
-            // different placeholders have reference to same object
-            Assert.IsTrue(object.ReferenceEquals(p.ClassWithInteger, p2.ClassWithInteger));
+            Assert.AreEqual(5, p.ClassWithInteger.IntegerValue);
         }
 
         [TestMethod]
@@ -47,7 +32,7 @@ namespace MefSampleUsage
 
         public interface IClassWithInteger
         {
-            int IntegerToExport { get; }
+            int IntegerValue { get; }
         }
 
         public class Placeholder
@@ -62,7 +47,7 @@ namespace MefSampleUsage
         public class ClassWithInteger : IClassWithInteger
         {
 
-            public int IntegerToExport
+            public int IntegerValue
             {
                 get
                 {
